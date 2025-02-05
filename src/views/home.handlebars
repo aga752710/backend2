@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>{{title}}</h1>
+    </header>
+    <main>
+      {{#if user}}
+        <p>Bienvenido, {{user.first_name}} {{user.last_name}}!</p>
+        <a href="/api/sessions/logout">Cerrar sesión</a>
+      {{else}}
+        <p>No estás autenticado. Por favor <a href="/api/sessions/login">inicia sesión</a> o <a href="/api/sessions/register">regístrate</a>.</p>
+      {{/if}}
+    </main>
+  </div>
+</body>
+</html>
